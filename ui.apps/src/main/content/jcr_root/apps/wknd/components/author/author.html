@@ -1,0 +1,18 @@
+<h1>Author Bio</h1>
+<div class="cmp-author" data-sly-use.author="${'com.adobe.aem.guides.wknd.core.models.Author' @ rAttribute='TestAttribute'}">
+
+    <div class="cmp-author__name">First Name :  ${author.firstName} </div>
+    <div class="cmp-author__name">Lasr Name :  ${author.lastName}   </div>
+    <div class="cmp-author__name">Is Professor:  ${author.isProfessor}  </div>
+    <div class="cmp-author__name">Page Title :  ${author.pageTitle}  </div>
+    <div class="cmp-author__name">Request Attribute :  ${author.requestAttribute}  </div>
+    <div class="cmp-author__name">Home Page Name :  ${author.homePageName}  </div>
+    <div>Modified By :  ${author.lastModifiedBy}  </div>
+    
+    <div>Books : ${author.books @ join=', '}</div>
+</div>
+
+
+
+
+
