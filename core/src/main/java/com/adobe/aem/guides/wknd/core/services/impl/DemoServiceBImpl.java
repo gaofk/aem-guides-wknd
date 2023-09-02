@@ -1,6 +1,6 @@
 package com.adobe.aem.guides.wknd.core.services.impl;
 
-import com.adobe.aem.guides.wknd.core.services.DemoService;
+import com.adobe.aem.guides.wknd.core.services.DemoServiceA;
 import com.adobe.aem.guides.wknd.core.services.DemoServiceB;
 import com.adobe.aem.guides.wknd.core.services.MultiService;
 import com.day.cq.wcm.api.Page;
@@ -16,7 +16,6 @@ import java.util.List;
 public class DemoServiceBImpl implements DemoServiceB {
     private static final Logger LOG = LoggerFactory.getLogger(DemoServiceBImpl.class);
 
-    /*--------Start Tutorial #30--------*/
     @Reference(target = "(component.name=com.adobe.aem.guides.wknd.core.services.impl.MultiServiceBImpl)")
     MultiService multiService;
 
@@ -24,10 +23,8 @@ public class DemoServiceBImpl implements DemoServiceB {
         return "Response coming from  " + multiService.getName();
     }
 
-    /*--------End Tutorial #30--------*/
-    /*--------Start Tutorial #29--------*/
     @Reference
-    DemoService demoService;
+    DemoServiceA demoService;
 
     @Override
     public List<String> getPages() {
@@ -44,5 +41,4 @@ public class DemoServiceBImpl implements DemoServiceB {
         }
         return null;
     }
-    /*--------End Tutorial #29--------*/
 }

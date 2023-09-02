@@ -1,6 +1,6 @@
 package com.adobe.aem.guides.wknd.core.services.impl;
 
-import com.adobe.aem.guides.wknd.core.services.DemoService;
+import com.adobe.aem.guides.wknd.core.services.DemoServiceA;
 import com.adobe.aem.guides.wknd.core.utils.ResolverUtil;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.wcm.api.PageManager;
@@ -15,8 +15,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Iterator;
 
-@Component(service = DemoService.class, immediate = true)
-public class DemoServiceAImpl implements DemoService {
+@Component(service = DemoServiceA.class, immediate = true)
+public class DemoServiceAImpl implements DemoServiceA {
     private static final Logger LOG = LoggerFactory.getLogger(DemoServiceAImpl.class);
 
     @Reference
