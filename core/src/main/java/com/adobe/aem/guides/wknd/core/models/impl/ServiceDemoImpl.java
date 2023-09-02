@@ -20,7 +20,7 @@ public class ServiceDemoImpl implements ServiceDemo {
     private static final Logger LOG = LoggerFactory.getLogger(ServiceDemoImpl.class);
 
     @OSGiService
-    DemoServiceA demoService;
+    DemoServiceA demoServiceA;
 
     /* @Inject */
     @OSGiService
@@ -28,7 +28,7 @@ public class ServiceDemoImpl implements ServiceDemo {
 
     @Override
     public Iterator<Page> getPagesList() {
-        return demoService.getPages();
+        return demoServiceA.getPages();
     }
 
     @Override

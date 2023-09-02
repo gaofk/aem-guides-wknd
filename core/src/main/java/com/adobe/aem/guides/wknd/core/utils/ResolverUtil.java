@@ -16,7 +16,8 @@ public final class ResolverUtil {
 
     }
 
-    public static final String WKND_SERVICE_USER = "gaowkndserviceuser";
+    // public static final String WKND_SERVICE_USER = "gaowkndserviceuser";
+    public static final String WKND_SERVICE_USER = "gao-service-user";
 
     /**
      * @param resourceResolverFactory factory

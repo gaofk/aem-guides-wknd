@@ -17,22 +17,19 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.*;
 
-@Model(adaptables = SlingHttpServletRequest.class,
-        adapters = Author.class,
-        resourceType = AuthorImpl.RESOURCE_TYPE,
-        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
-)
+@Model(adaptables = SlingHttpServletRequest.class, adapters = Author.class, resourceType = AuthorImpl.RESOURCE_TYPE, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 
 // @Exporter(name = "jackson", extensions ="json",selector = "geeks",
-//         options = {
-//                 @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value="true"),
-//                 @ExporterOption(name = "MapperFeature.SORT_PROPERTIES_ALPHABETICALLY", value = "true")
-//         })
+// options = {
+// @ExporterOption(name = "SerializationFeature.WRAP_ROOT_VALUE", value="true"),
+// @ExporterOption(name = "MapperFeature.SORT_PROPERTIES_ALPHABETICALLY", value
+// = "true")
+// })
 
 @JsonRootName("author-details")
-public class AuthorImpl implements Author{
+public class AuthorImpl implements Author {
     private static final Logger LOG = LoggerFactory.getLogger(AuthorImpl.class);
-    final protected static String RESOURCE_TYPE="wknd/components/author";
+    final protected static String RESOURCE_TYPE = "wknd/components/author";
 
     @Inject
     Resource resource;
@@ -70,7 +67,6 @@ public class AuthorImpl implements Author{
     @Via("resource")
     private boolean professor;
 
-
     @ValueMapValue
     private List<String> books;
 
@@ -99,7 +95,7 @@ public class AuthorImpl implements Author{
     }
 
     @Override
-    public String getPageTitle(){
+    public String getPageTitle() {
         return currentPage.getTitle();
     }
 
@@ -111,35 +107,35 @@ public class AuthorImpl implements Author{
 
     // @Override
     // public String getHomePageName(){
-    //     return resourcePage.getName();
+    // return resourcePage.getName();
     // }
 
     @Override
-    public String getLastModifiedBy(){
+    public String getLastModifiedBy() {
         return modifiedBy;
     }
 
     // @JsonProperty(value = "auhtor-name")
     // public String authorName(){
-    //     return "AEM GAO";
+    // return "AEM GAO";
     // }
 
     @Override
     public List<Map<String, String>> getBookDetailsWithMap() {
-        List<Map<String, String>> bookDetailsMap=new ArrayList<>();
+        List<Map<String, String>> bookDetailsMap = new ArrayList<>();
         try {
-            Resource bookDetail=resource.getChild("bookdetailswithmap");
-            if(bookDetail!=null){
+            Resource bookDetail = resource.getChild("bookdetailswithmap");
+            if (bookDetail != null) {
                 for (Resource book : bookDetail.getChildren()) {
-                    Map<String,String> bookMap=new HashMap<>();
-                    bookMap.put("bookname",book.getValueMap().get("bookname",String.class));
-                    bookMap.put("booksubject",book.getValueMap().get("booksubject",String.class));
-                    bookMap.put("publishyear",book.getValueMap().get("publishyear",String.class));
+                    Map<String, String> bookMap = new HashMap<>();
+                    bookMap.put("bookname", book.getValueMap().get("bookname", String.class));
+                    bookMap.put("booksubject", book.getValueMap().get("booksubject", String.class));
+                    bookMap.put("publishyear", book.getValueMap().get("publishyear", String.class));
                     bookDetailsMap.add(bookMap);
                 }
             }
-        }catch (Exception e){
-            LOG.info("\n ERROR while getting Book Details {} ",e.getMessage());
+        } catch (Exception e) {
+            LOG.info("\n ERROR while getting Book Details {} ", e.getMessage());
         }
         return bookDetailsMap;
     }
