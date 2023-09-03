@@ -14,7 +14,6 @@ import java.util.List;
 @Model(adaptables = SlingHttpServletRequest.class, adapters = OSGiConfigDemo.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class OSGiConfigDemoImpl implements OSGiConfigDemo {
 
-    /*--------Start Tutorial #31--------*/
     @OSGiService
     OSGiConfig oSGiConfig;
 
@@ -42,9 +41,7 @@ public class OSGiConfigDemoImpl implements OSGiConfigDemo {
     public String getRunModes() {
         return oSGiConfig.getRunModes();
     }
-    /*--------End Tutorial #31--------*/
 
-    /*--------Start Tutorial #32--------*/
     @OSGiService
     OSGiConfigModule oSGiConfigModule;
 
@@ -62,9 +59,7 @@ public class OSGiConfigDemoImpl implements OSGiConfigDemo {
     public String getServiceURL() {
         return oSGiConfigModule.getServiceURL();
     }
-    /*--------End Tutorial #32--------*/
 
-    /*--------Start Tutorial #33--------*/
     @OSGiService
     OSGiFactoryConfig oSGiFactoryConfig;
 
@@ -72,6 +67,4 @@ public class OSGiConfigDemoImpl implements OSGiConfigDemo {
     public List<OSGiFactoryConfig> getAllOSGiConfigs() {
         return oSGiFactoryConfig.getAllConfigs();
     }
-    /*--------End Tutorial #33--------*/
-
 }

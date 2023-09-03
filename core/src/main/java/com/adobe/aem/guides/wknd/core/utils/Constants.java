@@ -8,7 +8,7 @@ public final class Constants {
     /**
      * Name of exporter used for exporting components properties.
      */
-    public static final String EXPORTER_NAME = "jackson";
+    public static final String EXPORTER_NAME = "gao";
 
     /**
      * Extension to register exports

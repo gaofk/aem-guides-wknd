@@ -1,8 +1,5 @@
 package com.adobe.aem.guides.wknd.core.servlets;
 
-import com.adobe.aem.guides.wknd.core.utils.Constants;
-import com.day.cq.wcm.api.Page;
-import com.day.cq.wcm.api.PageManager;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.request.RequestParameter;
@@ -17,8 +14,6 @@ import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Iterator;
 import java.util.List;
 
 import static org.apache.sling.api.servlets.ServletResolverConstants.*;
@@ -28,7 +23,7 @@ import static org.apache.sling.api.servlets.ServletResolverConstants.*;
         "sling.servlet.methods=" + HttpConstants.METHOD_GET,
         SLING_SERVLET_METHODS + "=" + HttpConstants.METHOD_POST,
         "sling.servlet.resourceTypes=" + "wknd/components/page",
-        SLING_SERVLET_PATHS + "=" + "/bin/test",
+        SLING_SERVLET_PATHS + "=" + "",
         SLING_SERVLET_PATHS + "=" + "/gaowknd/test",
         "sling.servlet.selectors=" + "wknd",
         "sling.servlet.selectors=" + "ds",
@@ -41,7 +36,7 @@ public class GaoServlet extends SlingAllMethodsServlet {
     @Override
     protected void doGet(final SlingHttpServletRequest req, final SlingHttpServletResponse resp)
             throws ServletException, IOException {
-        final ResourceResolver resourceResolver = req.getResourceResolver();
+        // final ResourceResolver resourceResolver = req.getResourceResolver();
         String reqSelectors = "SELECTORS => ";
         String reqExtension = req.getRequestPathInfo().getExtension();
         try {

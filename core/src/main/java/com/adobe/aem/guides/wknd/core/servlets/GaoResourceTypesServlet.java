@@ -18,9 +18,8 @@ import java.io.IOException;
 import java.util.List;
 
 @Component(service = Servlet.class)
-@SlingServletResourceTypes(methods = { HttpConstants.METHOD_GET,
-        HttpConstants.METHOD_POST }, resourceTypes = "wknd/components/page", selectors = { "gao",
-                "test" }, extensions = { "txt", "xml" })
+@SlingServletResourceTypes(resourceTypes = "wknd/components/page", selectors = { "gao", "test" }, extensions = { "txt",
+        "xml", "txt" })
 
 public class GaoResourceTypesServlet extends SlingAllMethodsServlet {
     private static final Logger LOG = LoggerFactory.getLogger(GaoResourceTypesServlet.class);
@@ -34,19 +33,21 @@ public class GaoResourceTypesServlet extends SlingAllMethodsServlet {
         LOG.info("\n ------------------------STARTED GET-------------------------");
     }
 
-    @Override
-    protected void doPost(SlingHttpServletRequest req, SlingHttpServletResponse resp)
-            throws ServletException, IOException {
-        try {
-            LOG.info("\n ------------------------STARTED POST-------------------------");
-            List<RequestParameter> requestParameterList = req.getRequestParameterList();
-            for (RequestParameter requestParameter : requestParameterList) {
-                LOG.info("\n ==PARAMETERS===>  {} : {} ", requestParameter.getName(), requestParameter.getString());
-            }
-        } catch (Exception e) {
-            LOG.info("\n ERROR IN REQUEST {} ", e.getMessage());
-        }
-        resp.getWriter().write("======FORM SUBMITTED========");
-    }
+    // @Override
+    // protected void doPost(SlingHttpServletRequest req, SlingHttpServletResponse
+    // resp)
+    // throws ServletException, IOException {
+    // try {
+    // LOG.info("\n ------------------------STARTED POST-------------------------");
+    // List<RequestParameter> requestParameterList = req.getRequestParameterList();
+    // for (RequestParameter requestParameter : requestParameterList) {
+    // LOG.info("\n ==PARAMETERS===> {} : {} ", requestParameter.getName(),
+    // requestParameter.getString());
+    // }
+    // } catch (Exception e) {
+    // LOG.info("\n ERROR IN REQUEST {} ", e.getMessage());
+    // }
+    // resp.getWriter().write("======FORM SUBMITTED========");
+    // }
 
 }
