@@ -33,8 +33,10 @@ public class OSGiFactoryConfigImpl implements OSGiFactoryConfig {
         if (configsList == null) {
             configsList = new ArrayList<>();
         }
-        configsList.add(config);
 
+        LOGGER.error("------{}-----", config.getServiceName());
+
+        configsList.add(config);
     }
 
     public void unbindOSGiFactoryConfig(final OSGiFactoryConfig config) {
