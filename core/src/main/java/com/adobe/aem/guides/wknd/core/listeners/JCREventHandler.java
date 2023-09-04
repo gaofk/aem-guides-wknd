@@ -26,7 +26,7 @@ public class JCREventHandler implements EventListener {
         try {
 
             String[] nodetypes = { "cq:PageContent" };
-            session = slingRepository.loginService("geeksserviceuser", null);
+            session = slingRepository.loginService("gao-service-user", null);
             session.getWorkspace().getObservationManager().addEventListener(
                     this, // handler
                     Event.NODE_ADDED | Event.PROPERTY_ADDED, // int code for event type

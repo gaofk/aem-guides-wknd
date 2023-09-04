@@ -33,6 +33,7 @@ public class ResourceEventHandler implements ResourceChangeListener {
                 LOG.info("\n Event : {} , Resource : {} ", rc.getType(), rc.getPath());
                 ResourceResolver resourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
                 Resource resource = resourceResolver.getResource(rc.getPath());
+                
                 Node node = resource.adaptTo(Node.class);
                 node.setProperty("eventhandlertask", "Event " + rc.getType() + " by " + resourceResolver.getUserID());
                 resourceResolver.commit();

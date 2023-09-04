@@ -34,7 +34,7 @@ import javax.jcr.Node;
         EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/ADDED",
         EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/CHANGED",
         EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/REMOVED",
-        EventConstants.EVENT_FILTER + "=(path=/content/wknd/us/en/author/*)"
+        EventConstants.EVENT_FILTER + "=(path=/content/wknd/us/en/service-demo/*)"
 })
 public class OSGiEventHandler implements EventHandler {
 
