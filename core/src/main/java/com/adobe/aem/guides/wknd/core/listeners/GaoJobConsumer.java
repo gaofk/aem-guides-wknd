@@ -26,8 +26,8 @@ public class GaoJobConsumer implements JobConsumer {
             ResourceResolver resourceResolver = ResolverUtil.newResolver(resourceResolverFactory);
             String path = (String) job.getProperty("path");
             String event = (String) job.getProperty("event");
-            String heropage = (String) job.getProperty("heropage");
-            LOG.info("\n Job executing for  : {} ", resourceResolver.getResource(heropage).getName());
+            String demopage = (String) job.getProperty("demoPage");
+            LOG.info("\n Job executing for  : {} ", resourceResolver.getResource(demopage).getName());
             return JobResult.OK;
         } catch (Exception e) {
             LOG.info("\n Error in Job Consumer : {}  ", e.getMessage());
