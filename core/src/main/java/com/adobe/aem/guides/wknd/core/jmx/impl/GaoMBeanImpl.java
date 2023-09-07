@@ -10,7 +10,7 @@ import javax.management.DynamicMBean;
 import javax.management.NotCompliantMBeanException;
 
 @Component(immediate = true, service = DynamicMBean.class, property = {
-        "jmx.objectname = com.aem.geeks.core.jmx:type=Geeks MBean"
+        "jmx.objectname = com.adobe.aem.guides.wknd.core.jmx:type=Gao MBean"
 })
 public class GaoMBeanImpl extends AnnotatedStandardMBean implements GaoMBean {
 
